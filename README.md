@@ -1,9 +1,10 @@
-K-Means Clustering in C++
+# **K-Means Clustering in C++**
 
-Overview
+## *Overview*
 
 This project was created as part of a course in the discipline of Algorithms. It implements the K-Means clustering algorithm in C++ to classify a set of points into clusters based on their feature values. The program reads data from a file, assigns each point to the nearest cluster, updates the cluster centroids iteratively, and outputs the final cluster assignments.
-Features
+
+#### Features:
 
 . Reads data from a file containing 150 points with 4 feature values each.
 
@@ -15,7 +16,7 @@ Features
 
 . Outputs the final cluster assignments.
 
-How It Works
+### How It Works
 
 . The program reads the dataset from a specified file.
 
@@ -31,7 +32,7 @@ How It Works
 
 . Outputs the final clusters.
 
-File Format
+### File Format
 
 - The input file must contain 150 lines, each with four numerical values followed by a string (point name). Example:
 
@@ -39,7 +40,7 @@ File Format
 4.9 3.0 1.4 0.2 Iris-setosa
 ...
 
-Notes
+### Notes
 
 The constants for the number of clusters (CLUSTER_NUM), features per point (VALUES), and maximum iterations (MAX_ITERATIONS) are defined at the beginning of the code.
 
@@ -47,4 +48,4 @@ The constants for the number of clusters (CLUSTER_NUM), features per point (VALU
 
 . The Cluster structure holds the cluster centroids and assigned points.
 
-. The KMeans class implements the clustering algorithm.
+. The KMeans structure implements the clustering algorithm.
