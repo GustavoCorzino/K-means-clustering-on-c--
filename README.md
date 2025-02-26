@@ -41,7 +41,7 @@ File Format
 
 Notes
 
-. The number of clusters (CLUSTER_NUM), features per point (VALUES), and maximum iterations (MAX_ITERATIONS) are defined as constants on top of the code.
+The constants for the number of clusters (CLUSTER_NUM), features per point (VALUES), and maximum iterations (MAX_ITERATIONS) are defined at the beginning of the code.
 
 . The Point structure stores data points with their feature values and names.
 
