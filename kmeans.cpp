@@ -32,7 +32,7 @@ struct Point {
     }
 };
 
-// Structure representing a cluster
+// Structure of a cluster
 struct Cluster {
     int id_cluster; // Cluster ID
     double central_values[VALUES]; // Centroid values of the cluster
@@ -42,7 +42,7 @@ struct Cluster {
     Cluster() {}
 
     // Parameterized constructor initializing the cluster with the first assigned point
-    Cluster(int id, Point& point) {
+    Cluster(int id, Point point) {
         id_cluster = id;
         total_points = 0;
         for (int i = 0; i < VALUES; i++) {
@@ -53,8 +53,8 @@ struct Cluster {
 
 // K-Means clustering algorithm
 struct KMeans {
-    Cluster clusters[CLUSTER_NUM]; // Array of clusters
-    Point points[POINTS]; // Array of points
+    Cluster clusters[CLUSTER_NUM]; // Vector of clusters
+    Point points[POINTS]; // Vector of points
 
     // Constructor initializing KMeans with dataset points
     KMeans(Point pts[]) {
@@ -64,7 +64,7 @@ struct KMeans {
     }
 
     // Function to calculate the Euclidean distance between a point and the cluster centroids
-    int EucliDistance(Point& point) {
+    int EucliDistance(Point point) {
         double min_dist = 100.0; // Start with a large distance
         int id_cluster_center = 0;
 
@@ -91,11 +91,11 @@ struct KMeans {
             clusters[i] = Cluster(i, points[i]);
         }
         
-        bool done = false; // Convergence flag
+        bool done = false; // Iniciating the done variable to false to start the loop
         while (iter < MAX_ITERATIONS && !done) {
             done = true;
             int cluster_counts[CLUSTER_NUM] = {0}; // Count of points in each cluster
-            double new_centers[CLUSTER_NUM][VALUES] = {{0}}; // Temporary storage for new centroids
+            double new_centers[CLUSTER_NUM][VALUES] = {0}; // Temporary storage for new centroids
     
             // Assign each point to the nearest cluster
             for (int i = 0; i < POINTS; i++) {
@@ -144,7 +144,7 @@ struct KMeans {
 };
 
 int main() {
-    Point points[POINTS]; // Array to store dataset points
+    Point points[POINTS]; // Character vector to store dataset points
 
     string file_path;
     cout << "Enter the file path: ";
